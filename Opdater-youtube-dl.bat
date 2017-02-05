@@ -3,23 +3,23 @@ pip install youtube-dl --upgrade
 
 
 :choice
-set /P c=Kopier youtube-dl.exe til MPV[Y/N]?
-if /I "%c%" == "Y" goto :kopier_ja
-if /I "%c%" == "N" goto :kopier_nej
+set /P c=Want to copy newest youtube-dl.exe to MPV[Y/N]?
+if /I "%c%" == "Y" goto :copy_yes
+if /I "%c%" == "N" goto :copy_no
 goto :choice
 
 
-:kopier_ja
+:copy_yes
 
-echo "Kopierer youtube-dl.exe til MPV directory"
+echo "Copying youtube-dl.exe to MPV (program files) directory"
 del "C:\Program Files\MPV\youtube-dl.exe"
 copy "C:\Program Files (x86)\Python35-32\Scripts\youtube-dl.exe" "C:\Program Files\MPV\"
 pause
 exit
 
 
-:kopier_nej
+:copy_no
 
-echo "Ingen opdatering ... hence ... ingen kopiering "
+echo "No update ... hence ... no copying"
 pause 
 exit
