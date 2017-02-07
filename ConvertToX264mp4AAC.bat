@@ -16,12 +16,12 @@ goto :choice
 :lossless_yes
 
 echo "Lossless video... audio 320k aac "
-echo.
+echo
 set /p input= Input File :
 set /p output= Output File :
 set /p SSRC= SSRC Value :
 set /p threads= Threads :
-ffmpeg -i "%input%" -c:a aac -b:a 320k -af aresample=resampler=soxr -ar %SSRC% -c:v h264_nvenc -preset lossless -threads %threads% "%output%"
+ffmpeg -i "%input%" -c:a aac -b:a 320k -af aresample=resampler=soxr -ar %SSRC% -c:v h264_nvenc -preset lossless -level 5.0 "%output%"
 pause 
 exit
 
@@ -29,7 +29,7 @@ exit
 :lossless_no
 
 echo "NOT as lossless -> set output settings for the video... "
-echo.
+echo
 set /p input= Input File :
 set /p output= Output File :
 set /p Qmin= Value__0-12 :
