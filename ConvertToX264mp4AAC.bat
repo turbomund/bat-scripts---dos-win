@@ -20,7 +20,6 @@ echo
 set /p input= Input File :
 set /p output= Output File :
 set /p SSRC= SSRC Value :
-set /p threads= Threads :
 ffmpeg -i "%input%" -c:a aac -b:a 320k -af aresample=resampler=soxr -ar %SSRC% -c:v h264_nvenc -preset lossless -level 5.0 "%output%"
 pause 
 exit
