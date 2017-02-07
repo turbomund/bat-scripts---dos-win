@@ -36,7 +36,6 @@ set /p Qmin= Value__0-12 :
 set /p Qmax= Value__8-20 :
 set /p BA= bits audio aac Value(ex 320k) :
 set /p SSRC= SSRC Value :
-set /p threads= Threads :
-ffmpeg -i "%input%" -c:a aac -b:a %BA%k -af aresample=resampler=soxr -ar %SSRC% -c:v h264_nvenc -preset slow -level 5.0 -tune film -qmin %Qmin% -qmax %Qmax% -movflags +faststart -threads %threads% "%output%"
+ffmpeg -i "%input%" -c:a aac -b:a %BA%k -af aresample=resampler=soxr -ar %SSRC% -c:v h264_nvenc -preset hq -level 5.0 -profile high -qmin %Qmin% -qmax %Qmax% "%output%"
 pause 
 exit
