@@ -20,7 +20,7 @@ echo
 set /p input= Input File :
 set /p output= Output File :
 set /p SSRC= SSRC Value :
-ffmpeg -i "%input%" -c:a aac -b:a 320k -af aresample=resampler=soxr -ar %SSRC% -c:v h264_nvenc -preset lossless -level 5.0 "%output%"
+ffmpeg -i "%input%" -c:a aac -b:a 320k -af aresample=resampler=soxr -ar %SSRC% -c:v h264_nvenc -preset lossless -level 5.1 "%output%"
 pause 
 exit
 
@@ -35,6 +35,6 @@ set /p Qmin= Value__0-12 :
 set /p Qmax= Value__8-20 :
 set /p BA= bits audio aac Value(ex 320k) :
 set /p SSRC= SSRC Value :
-ffmpeg -i "%input%" -c:a aac -b:a %BA%k -af aresample=resampler=soxr -ar %SSRC% -c:v h264_nvenc -preset hq -level 5.0 -profile high -qmin %Qmin% -qmax %Qmax% "%output%"
+ffmpeg -i "%input%" -c:a aac -b:a %BA%k -af aresample=resampler=soxr -ar %SSRC% -c:v h264_nvenc -preset slow -level 5.1 -profile high -qmin %Qmin% -qmax %Qmax% "%output%"
 pause 
 exit
