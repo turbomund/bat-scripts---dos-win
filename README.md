@@ -8,4 +8,4 @@ Collection of .bat i made for ease and useability
 
 
 timeBtwn.bat gives the time between 2 times in a 24hour period.
-I use it mainly when i am playing arond in Avisynth and such. Want to cut a movie A TO B and often i need the time between.
+I use it mainly when i am playing arond in Avisynth and such. Want to cut a movie A TO B and often i need the time between aka length of the cut.
